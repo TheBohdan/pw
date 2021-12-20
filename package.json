@@ -4,6 +4,11 @@
   "description": "playwright test framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npx playwright install",
+    "start": "npx playwright test --headed",
+    "test": "npx playwright test "
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.17.1"
   }
 }
