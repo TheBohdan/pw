@@ -8,7 +8,8 @@
     "start": "npx playwright test --headed",
     "debug": "npx playwright test --debug",
     "test": "npx playwright test",
-    "help": "npx playwright --help"
+    "help": "npx playwright --help",
+    "codegen": "npx playwright codegen"
   },
   "devDependencies": {
     "@playwright/test": "^1.17.1"
