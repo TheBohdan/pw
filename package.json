@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "npx playwright install",
     "start": "npx playwright test --headed",
+    "debug": "npx playwright test --debug",
     "test": "npx playwright test "
   },
   "devDependencies": {
