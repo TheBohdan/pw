@@ -1,5 +1,8 @@
 import { devices, PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
+    use: {
+        // headless: false,
+    },
     projects: [
         {
             name: 'Desktop Chromium',
