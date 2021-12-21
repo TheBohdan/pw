@@ -21,6 +21,7 @@ test.describe.parallel('api' , async() => {
     await expect(response.ok()).toBeTruthy();
     
     const res = await response.json();
+    
     expect(res).toEqual(expect.objectContaining({
       count: 82,
       previous: 'https://swapi.dev/api/people/?page=1',
