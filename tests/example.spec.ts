@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 
-test.use({headless: false, screenshot: 'on', video: 'on'});
+test.use({headless: false});
 
 test.beforeEach(async ({ context }) => {
   // Block any css requests for each test in this file.
