@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { HomePage } from '../pages/home.page';
+
+// test.use({headless: false})
 
 test('basic test', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  const title = page.locator('.navbar__inner .navbar__title');
-  await expect(title).toHaveText('Playwright');
+  const home = new HomePage(page);
+  await home.navigate();
+  await home.search('page object');
+  await expect(page).toHaveURL('https://playwright.dev/docs/pom');
 });
