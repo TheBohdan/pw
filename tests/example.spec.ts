@@ -10,8 +10,8 @@ test.beforeEach(async ({ context }) => {
 test('basic test', async ({ page }) => {
   // Block png and jpeg images.
   await page.route(/(png|jpeg|svg)$/, route => route.abort());
-
   await page.goto('https://playwright.dev');
 
-  // await page.pause();
 });
+
+// npx playwright show-trace ./test-results/tests-example-basic-test/trace.zip
