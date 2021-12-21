@@ -4,9 +4,7 @@ const Pixel3 = devices['Pixel 3 landscape'];
 
 test.use({
   ...Pixel3,
-  colorScheme: 'dark',
   headless: false,
-  trace: 'retry-with-trace',
   geolocation: {
     latitude: 41.890221,
     longitude: 12.492348
