@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('api' , async() => {
+const URL = 'https://swapi.dev/api/people'
+
+test.describe.parallel(`api ${URL}` , async() => {
   
   test('get one persone', async ({ request }) => {
-    const response = await request.get('https://swapi.dev/api/people/1');
+    const response = await request.get(`${URL}/1`);
     await expect(response.status()).toBe(200);
     await expect(response.ok()).toBeTruthy();
     
@@ -16,7 +18,7 @@ test.describe.parallel('api' , async() => {
   });
   
   test('get people', async ({ request }) => {
-    const response = await request.get('https://swapi.dev/api/people', {
+    const response = await request.get(URL, {
       params: {
         page: '2'
       }
@@ -28,8 +30,8 @@ test.describe.parallel('api' , async() => {
 
     expect(res).toMatchObject({
       count: 82,
-      previous: 'https://swapi.dev/api/people/?page=1',
-      next: 'https://swapi.dev/api/people/?page=3',
+      previous: `${URL}/?page=1`,
+      next: `${URL}/?page=3`,
     });
   });
   
