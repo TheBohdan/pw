@@ -9,10 +9,10 @@ test.describe.parallel('api' , async() => {
     
     const res = await response.json();
     
-    expect(res).toEqual(expect.objectContaining({
+    expect(res).toMatchObject({
       name: 'Luke Skywalker',
       gender: 'male'
-    }));
+    });
   });
   
   test('get people', async ({ request }) => {
@@ -26,11 +26,11 @@ test.describe.parallel('api' , async() => {
     
     const res = await response.json();
 
-    expect(res).toEqual(expect.objectContaining({
+    expect(res).toMatchObject({
       count: 82,
       previous: 'https://swapi.dev/api/people/?page=1',
       next: 'https://swapi.dev/api/people/?page=3',
-    }));
+    });
   });
   
 })
